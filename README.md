@@ -2,6 +2,7 @@
 
 ---
 
+
 **Summary of all specification files:**
 
 | File | Purpose |
@@ -13,6 +14,10 @@
 | specs/input.yaml | Runtime config (mesh, output, voltages) |
 | Claude Code Prompt | Kickoff and follow-up prompts |
 
+
+## Boundary condition schematics
+![X-Z plane](imgs/geometry-schematic.svg)
+![X-Y plane](imgs/geometry-schematic-xy.svg)
 
 **Running:**
 ```bash
