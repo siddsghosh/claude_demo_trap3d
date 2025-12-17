@@ -1,0 +1,11 @@
+# Tool paths
+
+petsc_dir: /usr/lib/petscdir/petsc3.18
+gmsh_path: /home/sghosh/gmsh-4.15.0-Linux64/bin/gmsh
+
+# PETSc solver configuration
+
+ksp_type: cg
+pc_type: gamg
+rtol: 1.0e-10
+max_iterations: 10000

@@ -1,0 +1,17 @@
+# Runtime input configuration
+
+# Mesh file
+mesh_file: mesh/domain.msh
+
+# Output prefix (generates <prefix>.csv and <prefix>.vtk)
+output_prefix: output/solution
+
+# Electrode voltages
+rf_center: 100.0
+dc_left: 5.0
+dc_right: 5.0
+endcap_plus_y: 10.0
+endcap_minus_y: 10.0
+
+# Ground
+ground: 0.0

@@ -1,0 +1,55 @@
+# 3D Poisson equation: -∇²φ = f
+
+dimension: 3
+
+source: 0.0
+
+geometry_file: specs/geometry.yaml
+input_file: specs/input.yaml
+
+# Boundary conditions reference physical groups from geometry
+# Values read from input.yaml at runtime
+boundaries:
+  rf_center:
+    type: dirichlet
+    value_key: rf_center
+
+  dc_left:
+    type: dirichlet
+    value_key: dc_left
+
+  dc_right:
+    type: dirichlet
+    value_key: dc_right
+
+  endcap_plus_y:
+    type: dirichlet
+    value_key: endcap_plus_y
+
+  endcap_minus_y:
+    type: dirichlet
+    value_key: endcap_minus_y
+
+  box_x_min:
+    type: dirichlet
+    value_key: ground
+
+  box_x_max:
+    type: dirichlet
+    value_key: ground
+
+  box_y_min:
+    type: dirichlet
+    value_key: ground
+
+  box_y_max:
+    type: dirichlet
+    value_key: ground
+
+  box_z_max:
+    type: dirichlet
+    value_key: ground
+
+  ground_plane:
+    type: dirichlet
+    value_key: ground

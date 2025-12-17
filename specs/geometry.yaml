@@ -1,0 +1,78 @@
+# 3D Ion Trap Geometry Specification
+# Generates Gmsh .geo file using OpenCASCADE kernel
+
+factory: OpenCASCADE
+
+units: meters
+
+# Main computational domain (vacuum box)
+domain:
+  type: box
+  x_min: -300e-6
+  x_max: 300e-6
+  y_min: -400e-6
+  y_max: 400e-6
+  z_min: 0
+  z_max: 300e-6
+
+# Electrode patches on z=0 plane (imprinted via BooleanFragments)
+electrodes:
+  # Rail parameters
+  rail_length: 500e-6      # Lrail, centered in y
+  rf_rail_width: 60e-6     # w
+  dc_rail_width: 60e-6     # s
+  gap: 20e-6               # g, gap between RF and DC rails
+
+  # Endcap parameters
+  endcap_length: 120e-6    # Lend in y direction
+  endcap_half_width: 220e-6  # xEndPad
+
+  patches:
+    - name: rf_center
+      type: rail
+      position: center
+
+    - name: dc_left
+      type: rail
+      position: left
+
+    - name: dc_right
+      type: rail
+      position: right
+
+    - name: endcap_plus_y
+      type: endcap
+      position: +y
+
+    - name: endcap_minus_y
+      type: endcap
+      position: -y
+
+# Mesh settings
+mesh:
+  characteristic_length_min: 8e-6
+  characteristic_length_max: 30e-6
+
+# Physical groups (surfaces assigned after BooleanFragments)
+physical_groups:
+  volumes:
+    - name: VACUUM
+      id: 1
+
+  surfaces:
+    # Electrodes on z=0
+    - name: rf_center
+    - name: dc_left
+    - name: dc_right
+    - name: endcap_plus_y
+    - name: endcap_minus_y
+    
+    # Ground plane (z=0 excluding electrodes)
+    - name: ground_plane
+    
+    # Outer box walls
+    - name: box_x_min
+    - name: box_x_max
+    - name: box_y_min
+    - name: box_y_max
+    - name: box_z_max
