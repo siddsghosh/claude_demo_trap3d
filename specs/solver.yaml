@@ -1,7 +1,7 @@
 # Tool paths
 
-petsc_dir: /usr/lib/petscdir/petsc3.18
-gmsh_path: /home/sghosh/gmsh-4.15.0-Linux64/bin/gmsh
+petsc_dir: /usr/lib/petscdir/petsc3.19/x86_64-linux-gnu-real
+gmsh_path: /usr/bin/gmsh
 
 # PETSc solver configuration
 
